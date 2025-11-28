@@ -2,8 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]    # коли пуш в main — запускаємо
-  workflow_dispatch:      # можна запустити вручну з вкладки Actions
+    branches: [ main ]        # або master, як у тебе
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write           # важливо!
 
 jobs:
   deploy:
@@ -11,16 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Якщо у тебе React/Vite/Next.js — розкоментуй ці рядки:
-      # - name: Install dependencies
-      #   run: npm ci
-      # - name: Build
-      #   run: npm run build
+      # Якщо треба збірка (React, Vite тощо) — розкоментуй
+      # - name: Install and build
+      #   run: |
+      #     npm ci
+      #     npm run build
 
-      - name: Deploy 
+      - name: Deploy to GitHub Pages 
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist        # ← сюди папка з готовими файлами
-          # Якщо у тебе просто HTML в корені — заміни на ./
-          # Якщо після збірки файли в "build" — пиши ./build
+          publish_dir: .            # якщо твої файли в корені (index.html прямо в репозиторії)
+          # publish_dir: ./dist     # якщо після npm run build
+          # publish_dir: ./build    # для Create React App
