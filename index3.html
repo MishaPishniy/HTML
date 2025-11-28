@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+
+<html> 
+ <head>
+    <meta charset="UTF-8" content="Перша сторінка.">
+    <meta name="author" content="Михайло Пишний">
+    <title>Це наша 3 сторінка  </title>
+   <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body>
+
+<div id="buttons">
+  <button>Кнопка 1</button>
+  <button>Кнопка 2</button>
+  <button>Кнопка 3</button>
+</div> 
+<p id="result"></p>
+
+<script>
+const container = document.getElementById('buttons');
+const result = document.getElementById('result');
+
+container.addEventListener('click', function(event){
+  if (event.target.tagName === 'BUTTON') 
+  {
+    result.textContent = 'Ви натиснули: ' + event.target.textContent;
+  }
+})
+</script>
+
+<ul id="todo">
+  <li>Купити хліб <button class="del">X</button></li>
+  <li>Вивчити JS <button class="del">X</button></li>
+</ul>
+
+<script>
+  document.getElementById('todo').addEventListener('click', function(event) {
+  if (event.target.classList.contains('del')) {
+    event.target.parentElement.remove();
+  }
+});
+
+</script>
+
+<div>
+  <button id="minus">−</button>
+  <span id="count">0</span>
+  <button id="plus">+</button>
+</div>
+
+<script>
+  let count = 0;  
+const min = 0;
+const max = 20;
+
+const countEl = document.getElementById('count');
+const plusBtn = document.getElementById('plus');
+const minusBtn = document.getElementById('minus');
+
+
+plusBtn.addEventListener('click', () => {
+  if (count < max) {
+    count++;
+    countEl.textContent = count;
+  }
+});
+
+minusBtn.addEventListener('click', () => {
+  if (count > min) {
+    count--;
+    countEl.textContent = count;
+  }
+});
+</script>
+
+
+<h1 id="New">  3 сторінка </h1>
+<button id="btn">Натисни мене </button>
+
+<script>
+
+  const h1Tirle = document.getElementById('New')
+  const btn = document.getElementById('btn')
+
+  btn.addEventListener('click', function(){
+    h1Tirle.innerText = "New text"
+    h1Tirle.style.color = "blue"
+  }
+)
+
+
+
+
+
+</script>
+
+<script>
+  alert("Hello!")
+</script>
+
+
+   <script src="script3.js"></script>  
+ </body>
+
+
+
+</html>

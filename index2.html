@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+<html> 
+ <head>
+    <meta charset="UTF-8" content="Навчання HTML для початківців. Приклади, пояснення і практика.">
+    <meta name="author" content="Михайло Пишний">
+    <title>Це наша перша сторінка  </title>
+   <link rel="stylesheet" href="style.css">
+   
+ </head>
+
+ <body>
+
+  <h1>Мій блог про тестування</h1>
+  <h2>Автоматизація тестів</h2>
+  <h3>Cypress</h3>
+  <h4>Приклад тесту входу</h4>
+  <h5>Код у тесті</h5>
+  <h6>Додаткові матеріали</h6>
+
+    <p>Це мій перший абзац. Тут я розповідаю, що вчу HTML і створюю свою сторінку.</p>
+
+     <p>А це другий абзац. 
+        <br>Він відображається нижче 
+        <br>з відступом між рядками.</p>
+
+    <a href="https://www.google.com/"> Перейти на сторінку google </a>
+     
+<button id="btn">Натисни мене</button>
+<script>
+
+   const btn = document.getElementById('btn')
+
+   btn.addEventListener('click', ()=>{
+
+      alert('Ми клікнули')
+   })
+
+</script>
+
+
+<form id="form">
+  <input placeholder="Ваш email">
+  <button>Send</button>
+</form>
+
+<script> 
+
+   document.getElementById("form").addEventListener('submit' , (event)=>{
+      event.preventDefault()
+      alert('Форма відправлена')
+   })
+
+
+</script>
+
+
+
+<div>
+   <button id='minus'>-</button>
+   <p id='count'>0 </p>
+   <button id='plus'> +</button>
+</div>
+
+
+<script>
+
+   let min = 0
+   let max = 200
+   let count = 0
+
+   const countElm = document.getElementById('count')
+   const plus = document.getElementById('plus')
+
+   plus.addEventListener('click', ()=>{
+
+      if(count<max){
+         count++
+
+         countElm.textContent = count
+
+      }
+   })
+</script>
+
+ </body>
+
+
+
+</html>

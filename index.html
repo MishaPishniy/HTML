@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+<html> 
+ <head>
+    <meta charset="UTF-8" content="Перша сторінка.">
+    <meta name="author" content="Михайло Пишний">
+    <title>Це наша перша сторінка  </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    h1 {
+      color: green;
+      font-size: 18px;
+      }
+      p {
+         font-size: 40px;
+      }
+      </style> 
+ </head>
+
+ <body>
+
+      
+      <h1 style="color: rgb(88, 88, 129); font-size: 34px;"> Далі буде форма </h1>
+      <p> зі стилем</p>
+
+
+      <form action="#" method="POST">
+           <h2>Форма зворотного зв’язку</h2>
+           <label for="name"> Імя</label>
+           <input type="text" id="name"> <br><br>
+
+
+           <label style="border: 20px;" for="email"> email</label>
+           <input type="email" id="email"> <br><br>
+
+
+            <label for="age"> Вік</label>
+            <input type="number" id="age" min="1" max="100"><br><br>
+
+            <label for="genre">Улюблений жанр фільму:</label>
+            <select id="genre">
+               <option value="action"> Бойовики</option>
+               <option value="comedy">Комедія</option>
+               <option value="drama">Драма</option>
+               <option value="fantasy">Фантастика</option>
+            </select><br><br>
+
+
+             <label for="comment">Коментар:</label>
+             <textarea id="comment" rows="4" cols="40"></textarea><br><br>
+
+             <button type="submit">Відправити</button>
+ 
+      </form>
+
+      <img src="C:\Users\Mykhailo.Pyshnyi\Pictures\Фоновые изображения рабочего стола\4.jpg" alt="Це наша картинка" width="1209" height="300">
+
+<br>
+
+       <label for="tv">Телевізор</label>
+            <select id="tv">
+               <option value="sum"> Самсунг</option>
+               <option value="xiom">Ксяомі</option>
+               <option value="philips">Філіпс</option>
+               <option value="acer">Асер</option>
+            </select><br><br>
+
+
+            <p> Це текст без інлайн стилю</p>
+             <p> Це текст з інлайн стилем</p>
+              <h1>Заголовок з стилем  </h1>
+
+<script src="script.js">
+</script>
+
+<button id="myBtn">Натисни мене </button>
+<p id="text"></p>
+
+<script src="script2.js">
+
+</script>
+
+ </body>
+
+
+
+</html>
