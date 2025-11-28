@@ -2,13 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]        # або master, як у тебе
+    branches: [ main ]
   workflow_dispatch:
 
+# Дуже важливі права! Без них не працює
 permissions:
   contents: read
   pages: write
-  id-token: write           # важливо!
+  id-token: write
 
 jobs:
   deploy:
@@ -16,15 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Якщо треба збірка (React, Vite тощо) — розкоментуй
-      # - name: Install and build
+      # Якщо в тебе React/Vite/Next.js і треба збірка — розкоментуй:
+      # - name: Install & Build
       #   run: |
       #     npm ci
       #     npm run build
 
-      - name: Deploy to GitHub Pages 
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4.0.0   # саме ця версія або новіша!
         with:
-          publish_dir: .            # якщо твої файли в корені (index.html прямо в репозиторії)
-          # publish_dir: ./dist     # якщо після npm run build
-          # publish_dir: ./build    # для Create React App
+          publish_dir: .                          # якщо файли прямо в корені (твій випадок)
+          # publish_dir: ./dist                    # якщо після збірки в dist
